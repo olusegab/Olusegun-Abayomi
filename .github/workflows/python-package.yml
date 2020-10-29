@@ -1,0 +1,51 @@
+class Date:
+    def __init__(self):
+        self.day = 1
+        self.month = 1
+        self.year = 2000
+
+
+    def prompt(self):
+        self.day = int(input("Day: "))
+        self.month = int(input("Month: "))
+        self.year = int(input("Year: "))
+
+    def display(self):
+        print("{0:02d}/{1:02d}/{2:04d}".format(self.day, self.month, self.year))
+
+
+class Assignment:
+    def __init__(self):
+        self.name = "untitled"
+        self.start_date = Date()
+        self.due_date = Date()
+        self.end_day = Date()
+        
+    def prompt(self):
+        self.name = input("Name: ")
+        print(" ")
+        print("Start Date")
+        self.start_date.prompt()
+        print(" ")
+        print("Due Date")
+        self.due_date.prompt()
+        print(" ")
+        print("End Date")
+        self.end_day.prompt()
+
+    def display(self):
+        print(" ")
+        print("Assignment: {0}".format(self.name))
+        print("Start Date")
+        self.start_date.display()
+        print("Due Date")
+        self.due_date.display()
+        print("End Date")
+        self.end_day.display()
+
+def main():
+    mainCheck = Assignment()
+    mainCheck.prompt()
+    mainCheck.display()
+if __name__ == "__main__":
+    main()
